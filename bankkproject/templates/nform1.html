@@ -1,0 +1,425 @@
+<!--{% load static %}-->
+<!--{% block body %}-->
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+<!--    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<form action="nform1" method="POST">-->
+<!-- {% csrf_token %}-->
+<!--    <label> Name </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--        <input type="text" name="name" size="15"/> <br> <br>-->
+<!--      <label for="birthday">Date Of Birth </label>&nbsp;-->
+<!--      <input type="date" id="birthday" name="birthday">-->
+<!--    <br> <br>-->
+<!--        <label> Age </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--        <input type="text" name="age" size="15"/> <br> <br>-->
+<!--      <input class="form-check-input" type="radio" name="rad" id="flexRadioDefault1">-->
+<!--      <label class="form-check-label" for="flexRadioDefault1">-->
+<!--    Male  </label>-->
+<!--      <input class="form-check-input" type="radio" name="rad" id="flexRadioDefault2" checked>-->
+<!--      <label class="form-check-label" for="flexRadioDefault2">-->
+<!--    Female  </label>-->
+<!--      <input class="form-check-input" type="radio" name="rad" id="flexRadioDefault3" checked>-->
+<!--      <label class="form-check-label" for="flexRadioDefault2">-->
+<!--    Other  </label> <br><br>-->
+<!--        <label> Phone Numb </label>-->
+<!--        <input type="text" name="pnumb" size="15"/> <br> <br>-->
+<!--    <label for="exampleInputEmail1">Email ID </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--        <input type="email" name="em" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"><br><br>-->
+<!--    <label for="exampleFormControlTextarea1">Address</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--        <textarea class="form-control" name="address" id="exampleFormControlTextarea1" rows="3"></textarea><br><br>-->
+
+<!--  <label for="branchDropdown">Select Branch:</label>-->
+<!--  <select id="branchDropdown">-->
+<!--    <option value="">Select Branch</option>-->
+<!--    &lt;!&ndash; Add more branches here &ndash;&gt;-->
+<!--  </select>-->
+
+<!--  <label for="districtDropdown">Select District:</label>-->
+<!--  <select id="districtDropdown">-->
+<!--    <option value="Alappuzha">Alappuzha</option>-->
+<!--    &lt;!&ndash; Group districts for each branch using optgroup &ndash;&gt;-->
+<!--      <option value="Kozhikode">Kozhikode</option>-->
+<!--      <option value="Ernakulam">Ernakulam</option>-->
+<!--      &lt;!&ndash; Add more districts for branch 1 here &ndash;&gt;-->
+<!--      <option value="district3">Kozhikode</option>-->
+<!--      <option value="district4">Palakkad</option>-->
+<!--      <option value="district4">Kollam</option>-->
+<!--      <option value="district4">Kannur</option>-->
+<!--      <option value="district4">Kasaragod</option>-->
+<!--      <option value="district4">Idukki</option>-->
+<!--      <option value="district4">Kottayam</option>-->
+<!--            <option value="district4">Thrissur</option>-->
+<!--            <option value="district4">Malappuram</option>-->
+<!--            <option value="district4">Wayanad</option>-->
+<!--                  <option value="district4">Thiruvananthapuram</option>-->
+<!--            <option value="district4">Pathanamthitta</option>-->
+<!--            <option value="district4">Kottayam</option>-->
+
+
+<!--      &lt;!&ndash; Add more districts for branch 2 here &ndash;&gt;-->
+
+<!--    &lt;!&ndash; Add more branches and corresponding districts here &ndash;&gt;-->
+<!--  </select>-->
+
+<!--  <script>-->
+<!--      // Get references to the two dropdowns-->
+<!--    const districtDropdown = document.getElementById("districtDropdown");-->
+<!--    const branchDropdown = document.getElementById("branchDropdown");-->
+
+<!--    // Define the branches for each district as a JSON object passed from Django view-->
+<!--const branchesByDistrict = {"Alappuzha":[{id:1,name:'Cherthala'},{id:2,name:'Mavelikara'}],-->
+<!--    "Ernakulam":[{id:1,name:'Perumanoor'},{id:2,name:'Ayyappankavu'}],"Kozhikode":[{id:1,name:'Kallai Road'},{id:2,name:'Mavoor Road'}],-->
+<!--        "Palakkad":[{id:1,name:'Koppam'},{id:2,name:'Pottassery'}],"Kannur":[{id:1,name:'Chalad-Kannur'},{id:2,name:'Cherupuzha'}],-->
+<!--        "Kasaragod":[{id:1,name:'Pachambala'},{id:2,name:'Nileshwaram'}],"Idukki":[{id:1,name:'Paduppu'},{id:2,name:'Thrikkaripur'}],"Kottayam":[{id:1,name:'Nattakom'},{id:2,name:'Monipally'}],-->
+<!--        "Thrissur":[{id:1,name:'Thrissur Main'},{id:2,name:'Triprayar'}],"Malappuram":[{id:1,name:''},{id:2,name:''}],"Wayanad":[{id:1,name:''},{id:2,name:''}],-->
+<!--        "Thiruvananthapuram":[{id:1,name:''},{id:2,name:''}],"Pathanamthitta":[{id:1,name:''},{id:2,name:''}],"Kottayam":[{id:1,name:''},{id:2,name:''}]};-->
+<!--    // Function to update the branch dropdown options based on the selected district-->
+<!--    function updateBranchDropdown() {-->
+<!--        // Clear previous options-->
+<!--        branchDropdown.innerHTML = '<option value="">&#45;&#45; Select Branch &#45;&#45;</option>';-->
+
+<!--        // Get the selected district ID-->
+<!--        const selectedDistrictId = districtDropdown.value;-->
+
+<!--        // If a district is selected, populate the corresponding branches-->
+<!--        if (selectedDistrictId && branchesByDistrict[selectedDistrictId]) {-->
+<!--            branchesByDistrict[selectedDistrictId].forEach((branch) => {-->
+<!--                const option = document.createElement("option");-->
+<!--                option.value = branch.id;-->
+<!--                option.textContent = branch.name;-->
+<!--                branchDropdown.appendChild(option);-->
+<!--            });-->
+<!--        }-->
+<!--    }-->
+
+<!--    // Event listener to trigger the updateBranchDropdown function when the district dropdown changes-->
+<!--    districtDropdown.addEventListener("change", updateBranchDropdown);-->
+<!--  </script>-->
+<!--    <br><br>-->
+<!--        <label for="exampleFormControlTextarea1">Account Type</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--        <select name="typ" class="form-control form-control-lg">-->
+<!--      <option>Savings Account</option>-->
+<!--         <option>Real Account</option>-->
+<!--            <option>Personal Account</option>-->
+<!--            <option>Nominal Account</option>-->
+<!--    </select><br><br>-->
+
+<!--    <br> <br>-->
+<!--    <div class="form-check form-check-inline">-->
+<!--            <label for="exampleFormControlTextarea1">  Materials provide</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+
+<!--      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="debit" value="option1">-->
+<!--      <label class="form-check-label" for="inlineCheckbox1">Debit Card-->
+<!--    </label>-->
+<!--      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="credit" value="option2">-->
+<!--      <label class="form-check-label" for="inlineCheckbox2">Credit Card</label>-->
+<!--        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="cheque" value="option3">-->
+<!--      <label class="form-check-label" for="inlineCheckbox2">Cheque Book</label>-->
+<!--        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" name="pass" value="option4">-->
+<!--      <label class="form-check-label" for="inlineCheckbox2">Pass Book</label>-->
+
+<!--    </div><br><br>-->
+<!--    <input type="submit" name="submit">-->
+<!--&lt;!&ndash;      <button type="submit">Logout</button><br><br>&ndash;&gt;-->
+
+<!--</form>-->
+<!--<br><br>-->
+<!--&lt;!&ndash;<a href="{% url 'appbank:home' %}">Home</a><br><br>&ndash;&gt;-->
+<!--</body>-->
+<!--</html>-->
+<!--{% endblock %}-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Account registration form</title>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+<style>
+html, body {
+min-height: 100%;
+}
+body, div, form, input, select, p {
+padding: 0;
+margin: 0;
+outline: none;
+font-family: Roboto, Arial, sans-serif;
+font-size: 14px;
+color: #666;
+}
+h1 {
+margin: 0;
+font-weight: 400;
+}
+h3 {
+margin: 12px 0;
+color: #8ebf42;
+}
+.main-block {
+display: flex;
+justify-content: center;
+align-items: center;
+background: #fff;
+}
+form {
+width: 100%;
+padding: 20px;
+}
+fieldset {
+border: none;
+border-top: 1px solid #8ebf42;
+}
+.account-details, .personal-details {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+.account-details >div, .personal-details >div >div {
+display: flex;
+align-items: center;
+margin-bottom: 10px;
+}
+.account-details >div, .personal-details >div, input, label {
+width: 100%;
+}
+label {
+padding: 0 5px;
+text-align: right;
+vertical-align: middle;
+}
+input {
+padding: 5px;
+vertical-align: middle;
+}
+.checkbox {
+margin-bottom: 10px;
+}
+select, .children, .gender, .bdate-block {
+width: calc(100% + 26px);
+padding: 5px 0;
+}
+select {
+background: transparent;
+}
+.gender input {
+width: auto;
+}
+.gender label {
+padding: 0 5px 0 0;
+}
+.bdate-block {
+display: flex;
+justify-content: space-between;
+}
+.birthdate select.day {
+width: 35px;
+}
+.birthdate select.mounth {
+width: calc(100% - 94px);
+}
+.birthdate input {
+width: 38px;
+vertical-align: unset;
+}
+.checkbox input, .children input {
+width: auto;
+margin: -2px 10px 0 0;
+}
+.checkbox a {
+color: #8ebf42;
+}
+.checkbox a:hover {
+color: #82b534;
+}
+button {
+width: 100%;
+padding: 10px 0;
+margin: 10px auto;
+border-radius: 5px;
+border: none;
+background: #8ebf42;
+font-size: 14px;
+font-weight: 600;
+color: #fff;
+}
+button:hover {
+background: #82b534;
+}
+@media (min-width: 568px) {
+.account-details >div, .personal-details >div {
+width: 50%;
+}
+label {
+width: 40%;
+}
+input {
+width: 60%;
+}
+select, .children, .gender, .bdate-block {
+width: calc(60% + 16px);
+}
+}
+</style>
+</head>
+<body>
+<div class="main-block">
+<form action="nform1" method="POST">
+{% csrf_token %}
+<h1>Create a free account</h1>
+<fieldset>
+<legend>
+<h3>Account Details</h3>
+</legend>
+<div class="account-details">
+<div><label>Name*</label><input type="text" name="name" required></div>
+<!--<div><label>Age*</label><input type="text" name="age" required></div>-->
+<!--    <div>-->
+<!--<label >Birthdate*</label><input type="date" id="birthday" name="birthday">-->
+<!--</div>-->
+</div>
+</div>
+<div class="personal-details">
+<div>
+    <div><label>Age*</label><input type="text" name="age" required></div>
+    <div><label >Birthdate*</label><input type="date" id="birthday" name="birthday"></div>
+<div><label>Email*</label><input type="email" name="em" required></div>
+<div><label>Phone*</label><input type="text" name="pnumb" required></div>
+<div><label>Address</label><input type="text" name="address"></div>
+<div><label for="districtDropdown">Select District:</label>
+  <select id="districtDropdown">
+    <option value="Alappuzha">Alappuzha</option>
+    <!-- Group districts for each branch using optgroup -->
+      <option value="Kozhikode">Kozhikode</option>
+      <option value="Ernakulam">Ernakulam</option>
+      <!-- Add more districts for branch 1 here -->
+      <option value="Kozhikode">Kozhikode</option>
+      <option value="Palakkad">Palakkad</option>
+      <option value="Kollam">Kollam</option>
+      <option value="Kannur">Kannur</option>
+      <option value="Kasaragod">Kasaragod</option>
+      <option value="Idukki">Idukki</option>
+      <option value="Kottayam">Kottayam</option>
+            <option value="Thrissur">Thrissur</option>
+            <option value="Malappuram">Malappuram</option>
+            <option value="Wayanad">Wayanad</option>
+                  <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+            <option value="Pathanamthitta">Pathanamthitta</option>
+            <option value="Kottayam">Kottayam</option>
+
+
+      <!-- Add more districts for branch 2 here -->
+
+    <!-- Add more branches and corresponding districts here -->
+  </select></div>
+<div>
+<label for="branchDropdown">Select Branch:</label>
+  <select id="branchDropdown">
+    <option value="">Select Branch</option>
+    <!-- Add more branches here -->
+  </select>
+    <script>
+      // Get references to the two dropdowns
+    const districtDropdown = document.getElementById("districtDropdown");
+    const branchDropdown = document.getElementById("branchDropdown");
+
+    // Define the branches for each district as a JSON object passed from Django view
+    const branchesByDistrict = {"Alappuzha":[{id:1,name:'Cherthala'},{id:2,name:'Mavelikara'}],"Kozhikode":[{id:1,name:''}],
+
+    "Ernakulam":[{id:1,name:'Kochi'},{id:2,name:'Edappally'},{id:3,name:'Mattancherry '}],
+    "Kozhikode":[{id:1,name:'Kallai Road'},{id:2,name:'Mavoor Road'}],
+
+        "Palakkad":[{id:1,name:'Koppam'},{id:2,name:'Pottassery'}],
+        "Kollam":[{id:1,name:'Ayur'},{id:2,name:'Perumpuzha'}],
+
+        "Kasaragod":[{id:1,name:'Pachambala'},{id:2,name:'Nileshwaram'}],
+        "Idukki":[{id:1,name:'Paduppu'},{id:2,name:'Thrikkaripur'}],
+        "Kottayam":[{id:1,name:'Nattakom'},{id:2,name:'Monipally'}],
+
+        "Thrissur":[{id:1,name:'Thrissur Main'},{id:2,name:'Triprayar'}],
+        "Malappuram":[{id:1,name:'Valancherry'},{id:2,name:'Vengara'}],
+        "Wayanad":[{id:1,name:'Kalpetta'},{id:2,name:'Meppady'}],
+
+        "Thiruvananthapuram":[{id:1,name:'Varkala'},{id:2,name:'Parassala'}],
+        "Pathanamthitta":[{id:1,name:'Adoor'},{id:2,name:'Kozhencherry'}],
+        "Kottayam":[{id:1,name:'Kaipuzha'},{id:2,name:'Kumarakom'}]};
+
+    // Function to update the branch dropdown options based on the selected district
+    function updateBranchDropdown() {
+        // Clear previous options
+        branchDropdown.innerHTML = '<option value="">-- Select Branch --</option>';
+
+        // Get the selected district ID
+        const selectedDistrictId = districtDropdown.value;
+
+        // If a district is selected, populate the corresponding branches
+        if (selectedDistrictId && branchesByDistrict[selectedDistrictId]) {
+            branchesByDistrict[selectedDistrictId].forEach((branch) => {
+                const option = document.createElement("option");
+                option.value = branch.id;
+                option.textContent = branch.name;
+                branchDropdown.appendChild(option);
+            });
+        }
+    }
+
+    // Event listener to trigger the updateBranchDropdown function when the district dropdown changes
+    districtDropdown.addEventListener("change", updateBranchDropdown);
+  </script>
+</div>
+<div><label>Account Type</label>
+<select>
+    <option>Savings Account</option>
+         <option>Real Account</option>
+            <option>Personal Account</option>
+            <option>Nominal Account</option>
+    </select>
+</div>
+    <div>
+<label>Gender*</label><label for="male" class="radio">Male</label><input type="radio" value="none" id="male" name="rad" required/>
+<label for="female" class="radio">Female</label>
+<input type="radio" value="none" id="female" name="rad" required/>
+
+</div>
+    <div>
+        <label>Materials Provided*</label>
+
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+      <label class="form-check-label" for="inlineCheckbox1">Debit Card
+    </label>
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+      <label class="form-check-label" for="inlineCheckbox2">Credit Card</label>
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+      <label class="form-check-label" for="inlineCheckbox2">Cheque Book</label>
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+      <label class="form-check-label" for="inlineCheckbox2">Pass Book</label>
+
+    </div>
+</div>
+<div>
+
+
+</div>
+
+</div>
+</div>
+
+
+    <input type="submit" name="submit">
+
+ </form>
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+ </div>
+</body>
+</html>
+
+

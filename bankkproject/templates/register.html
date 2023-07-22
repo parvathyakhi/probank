@@ -1,0 +1,85 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<form action="register" method="POST">-->
+<!-- {% csrf_token %}-->
+<!--<label><B> Username </B></label>-->
+<!--<input type="text" name="username" size="15"/> <br> <br>-->
+<!--<b>Password:</b>-->
+<!--<input type="password" name="password"> <br>-->
+<!--<br> <br>-->
+<!--<b>Confirm password:</b>-->
+<!--<input type="password" name="conform-password"> <br> <br>-->
+<!--    <button type="submit">Submit</button><br><br>-->
+<!--</form>-->
+<!--{% for msg in messages %}-->
+<!--{{msg}}-->
+<!--{% endfor %}-->
+<!--</body>-->
+<!--</html>-->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Registration</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Login Form Template" name="keywords">
+        <meta content="Login Form Template" name="description">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Stylesheet -->
+        <link href="{% static 'css1/style.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="wrapper login-1">
+            <div class="container">
+                <div class="col-left">
+                    <div class="login-text">
+                        <h2> </h2>
+                        <p><br></p>
+                    </div>
+                </div>
+                <div class="col-right">
+                    <div class="login-form">
+                        <h2>Create Account</h2>
+                        <form action="register" method="POST">
+                            {% csrf_token %}
+                            <p>
+                                <label>Username<span>*</span></label>
+                                <input type="text" name="username" placeholder="Enter Username" required>
+                            </p>
+                            <p>
+                                <label>Password<span>*</span></label>
+                                <input type="password" placeholder=" Enter Password" name="password" required>
+                            </p>
+                            <p>
+                                <label>Conform Password<span>*</span></label>
+                                <input type="password" placeholder=" Re-Enter Password" name="conform-password" required>
+                            </p>
+                            <p>
+                                <button type="submit">Register</button>
+                            </p>
+
+                        </form>
+                            {% for msg in messages %}
+{{msg}}
+{% endfor %}
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+</html>
+
